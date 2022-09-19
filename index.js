@@ -77,17 +77,32 @@ function removeItem(e) {
 const emptyStar = '☆';
 const fullStar = '★';
 
-const starCollection = document.getElementsByClassName("glyph");
-const starSpans = document.querySelectorAll('.star');
-for (let star of starCollection) {
-    star.addEventListener("click", addReview);
-}
+// let starCollection = document.getElementsByClassName("glyph");
+let starCollection = document.querySelectorAll('.glyph span');
+// for (let star of starCollection) {
+//     star.addEventListener("click", addReview);
+// }
 
-// const starCollection = document.getElementsByClassName("glyph");
-// starCollection.addEventListener('click' , event => {
-//     console.log(event.target)
-// })
+starCollection.forEach(star => {
+    star.addEventListener('click', function () {
+        let rating = this.getAttribute("data-rating");
+        return SetRating(rating, starCollection);
+    });
+});
 
+
+function SetRating(rating, starCollection) {
+    let len = starCollection.length;
+    console.log(rating);
+
+    for (let i = 0; i < len; i++) {
+        if (i < rating) {
+            starCollection[i].innerHTML = '★';
+        } else {
+            starCollection[i].innerHTML = '☆';
+        }
+    }
+};
 
 let recipeForm = document.getElementById("recipe-form");
 let recipeDescription = document.getElementById("floatingTextarea");
@@ -135,6 +150,37 @@ function addReview(e) {
     }
 }
 
+
+// function addStarStyling(e){
+//     let idNum = e.target.attributes.id.value;
+
+//     if (idNum === 1){
+//         document.getElementById(`1`).style.className = "starChoice";
+//     }
+//     else if (idNum === 2) {
+//         document.getElementById(`1`).style.className = "starChoice";
+//         document.getElementById(`2`).style.className = "starChoice";
+//     }
+//     else if (idNum === 3){
+//         document.getElementById(`3`).style.className = "starChoice";
+//         document.getElementById(`2`).style.className = "starChoice";
+//         document.getElementById(`1`).style.className = "starChoice";
+//     }
+//     else if (idNum === 4) {
+//         document.getElementById(`4`).style.className = "starChoice";
+//         document.getElementById(`3`).style.className = "starChoice";
+//         document.getElementById(`2`).style.className = "starChoice";
+//         document.getElementById(`1`).style.className = "starChoice";
+//     }
+//     else if (idNum === 5) {
+//         document.getElementById(`5`).style.className = "starChoice";
+//         document.getElementById(`4`).style.className = "starChoice";
+//         document.getElementById(`3`).style.className = "starChoice";
+//         document.getElementById(`2`).style.className = "starChoice";
+//         document.getElementById(`1`).style.className = "starChoice";
+//     }
+// }
+
 function resetStars(e) {
     console.log(e.target.innerHTML);
     // e.target.style.color = "white";
@@ -144,5 +190,17 @@ function resetStars(e) {
     while (idNum >= 1) {
         document.getElementById(`${idNum}`).innerText = emptyStar;
         idNum--;
+    }
+}
+
+window.onscroll = function () { scrollFunction() };
+
+function scrollFunction() {
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        document.getElementById("footer-container").style.backgroundImage = "none";
+        document.getElementById("footer-container").style.height = "60px";
+    } else {
+        document.getElementById("footer-container").style.backgroundImage = "url('images/footer-new.png')";
+        document.getElementById("footer-container").style.height = "200px";
     }
 }

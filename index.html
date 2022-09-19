@@ -18,6 +18,7 @@
             <li class="footer-item"><a class="jump-link" href="#recipes">Recipes</a></li>
             <li class="footer-item"><a class="jump-link" href="#feedback-jump">Share Feedback</a></li>
             <li class="footer-item"><a class="jump-link" href="#carouselExampleDark">Testimonials</a></li>
+        </ul>
     </div>
     <main>
         <div class="grid-container">
@@ -32,16 +33,16 @@
                         <h2 id="random-meal-title">Meal name goes here</h2>
                         <h4 id="image-container"><img id="meal-image" alt="detail-image" src="" /></h4>
                         <div style="padding-top: 10px;" id="rateOrRenderRecipeContainer">
-                            <p style="text-align: center; color: white; font-size: 16px;">Rate this recipe:</p>
-                            <ul id="star-container">
-                                <li class="glyph" style="font-size: 1.75em;">
-                                    <span class="star" id="ratingButton1">&#9734;</span>
-                                    <span class="star" id="ratingButton2">&#9734;</span>
-                                    <span class="star" id="ratingButton3">&#9734;</span>
-                                    <span class="star" id="ratingButton4">&#9734;</span>
-                                    <span class="star" id="ratingButton5">&#9734;</span>
-                                </li>
-                            </ul>
+                            <p style="text-align: center; color: white; font-size: 20px; font-weight: normal;">Rate this recipe:</p>
+                            <div id="star-container">
+                                <div class="glyph" style="font-size: 1.75em;">
+                                    <span data-rating="1">&#9734;</span>
+                                    <span data-rating="2">&#9734;</span>
+                                    <span data-rating="3">&#9734;</span>
+                                    <span data-rating="4">&#9734;</span>
+                                    <span data-rating="5">&#9734;</span>
+                                </div>
+                            </div>
                             <button id="newRecipeBtn">Find Another Recipe</button>
                         </div>
                         <p style="padding-top: 30px;"><span class="ingredients1">Ingredients:</span><br>Click on any
