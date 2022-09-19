@@ -16,15 +16,6 @@ newRecipeBtn.addEventListener('click', () => {
         .then(data => loadRandomMeal(data));
 });
 
-const footerContainer = document.querySelector('#footer-container');
-const main = document.querySelector('main');
-
-window.addEventListener('scroll', () => {
-    footerContainer.style.height = "60px";
-    footerContainer.style.backgroundColor = "#507e8d";
-    footerContainer.style.backgroundImage = "none";
-});
-
 function loadRandomMeal(data) {
     for (meals of data.meals) {
         let mealTitle = document.querySelector('#random-meal-title');
@@ -47,35 +38,40 @@ function loadRandomMeal(data) {
                 btn = document.createElement('button');
                 ulIngredients.appendChild(btn);
                 btn.textContent = item;
-                btn.addEventListener('click', clickBtn)
+                btn.addEventListener('click', addToGroceryList)
             }
-        })
-    }
-}
-
-const groceryListContainer = document.querySelector('#grocery-list-container');
-const groceryListUl = document.querySelector('#grocery-list-items');
-
-function clickBtn(e) {
-    console.log(e)
-    const targetItem = e.target;
-    const myItem = e.target.textContent;
-    const closeBtn = document.createElement("button");
-    let liGrocery = document.createElement('li');
-    closeBtn.textContent = `${myItem}` + "  X";
-    liGrocery.appendChild(closeBtn);
-    liGrocery.classList.add('groceryItems');
-    targetItem.classList.add('after-clicked');
-    groceryListUl.appendChild(liGrocery);
-    let groceryItems = document.querySelectorAll('.groceryItems');
-    groceryListContainer.classList.remove("hidden");
-    for (li of groceryItems) {
-        liGrocery.addEventListener('click', (e) => {
-            targetItem.classList.remove('after-clicked');
-            console.log(e);
-            e.target.remove();
         });
     }
+
+}
+const groceryListContainer = document.querySelector('#grocery-list-container');
+// const star1 = document.querySelector('#1');
+// const star2 = document.querySelector('#2');
+// const star3 = document.querySelector('#3');
+// const star4 = document.querySelector('#4');
+// const star5 = document.querySelector('#5');
+
+
+function addToGroceryList(e) {
+    const myItem = e.target.textContent;
+    e.target.classList.add("after-clicked");
+    console.log(e.target.textContent);
+    const li = document.createElement('li');
+    li.innerHTML = myItem;
+    const closeBtn = document.createElement("button");
+    closeBtn.textContent = "X";
+    closeBtn.classList.add("close");
+    li.appendChild(closeBtn);
+    document.querySelector('#grocery-list-items').appendChild(li);
+    groceryListContainer.classList.remove("hidden");
+    closeBtn.addEventListener('click', removeItem);
+};
+
+function removeItem(e) {
+    console.log(e);
+    e.target.parentNode.style.opacity = 1;
+    e.target.parentNode.remove();
+    e.target.remove();
 }
 
 const emptyStar = '☆';
@@ -86,6 +82,12 @@ const starSpans = document.querySelectorAll('.star');
 for (let star of starCollection) {
     star.addEventListener("click", addReview);
 }
+
+// const starCollection = document.getElementsByClassName("glyph");
+// starCollection.addEventListener('click' , event => {
+//     console.log(event.target)
+// })
+
 
 let recipeForm = document.getElementById("recipe-form");
 let recipeDescription = document.getElementById("floatingTextarea");
@@ -114,10 +116,11 @@ let staticLi = document.querySelectorAll(".staticLi")
 document.addEventListener("DOMContentLoaded", function () {
     for (const item of staticLi) {
         let likeBtn = document.createElement("button");
-        item.append(likeBtn);
+        item.append(likeBtn)
         likeBtn.innerText = 0;
-        likeBtn.addEventListener("click", incrementBtn);
+        likeBtn.addEventListener("click", incrementBtn)
     }
+
 })
 
 function addReview(e) {
@@ -142,5 +145,4 @@ function resetStars(e) {
         document.getElementById(`${idNum}`).innerText = emptyStar;
         idNum--;
     }
-};
-
+}

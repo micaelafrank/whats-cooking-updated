@@ -269,6 +269,8 @@ p.ingredients {
     text-align: center;
     font-size: 1.75em;
     color: white;
+    display: flex;
+    flex-direction: row;
 }
 
 .side>ul>li {
