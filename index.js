@@ -23,10 +23,13 @@ function loadReviewPreview() {
 }
 
 function loadTopFeedback(reviews) {
+    console.log(reviews)
     const firstReviewUser = document.querySelector(`#reviewedBy1`);
     firstReviewUser.textContent = reviews[0].username;
     const firstReviewText = document.querySelector(`#meal-review1`);
     firstReviewText.textContent = reviews[0].description;
+    const firstDish = document.querySelector('#dishName');
+    firstDish.innerText = reviews[0].dishtitle.toUpperCase();
     const btn1 = document.querySelector('#button1');
     btn1.textContent = `${reviews[0].likes}`;
     
@@ -34,16 +37,28 @@ function loadTopFeedback(reviews) {
     secondReviewUser.textContent = reviews[1].username;
     const secondReviewText = document.querySelector(`#meal-review2`);
     secondReviewText.textContent = reviews[1].description;
-    
+    const dish2 = document.querySelector('#dishName2');
+    dish2.textContent = reviews[1].dishTitle.toUpperCase();
+    const btn2 = document.querySelector('#button2');
+    btn2.textContent = `${reviews[1].likes}`;
+
     const thirdUser = document.querySelector(`#reviewedBy3`);
     thirdUser.textContent = reviews[2].username;
     const thirdText = document.querySelector(`#meal-review3`);
     thirdText.textContent = reviews[2].description;
+    const dish3 = document.querySelector('#dishName3');
+    dish3.textContent = reviews[2].dishTitle.toUpperCase();
+    const btn3 = document.querySelector('#button3');
+    btn3.textContent = `${reviews[2].likes}`;
 
     const fourthUser = document.querySelector(`#reviewedBy4`);
     fourthUser.textContent = reviews[3].username;
     const fourthText = document.querySelector(`#meal-review4`);
     fourthText.textContent = reviews[3].description;
+    const dish4 = document.querySelector('#dishName4');
+    dish4.textContent = reviews[3].dishTitle.toUpperCase();
+    const btn4 = document.querySelector('#button4');
+    btn4.textContent = `${reviews[3].likes}`;
 
     // console.log(reviews)
     // reviews.review.forEach((review) => {

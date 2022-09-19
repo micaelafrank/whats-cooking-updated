@@ -20,23 +20,27 @@
   "reviews":[
     {
       "username": "Cynthia F.",
-      "description": "I made the Honey Garlic Salmon the other night...sooo delicious and was able to use almost only ingredients I already had in my kitchen. Even the kids loved it!",
+      "dishtitle": "Honey Garlic Salmon",
+      "description": "I made the honey garlic salmon last night...it was unreal! Quick to make and I was able to use almost only ingredients I already had in my kitchen. Even the kids loved it!",
       "likes": 10
     },
     {
       "username": "Evan J.",
-      "description": "OMG made the Meditteranean Pasta Salad for a date night activity and it was such a fun activity for my partner and I to do together :) 5 stars for sure",
-      "likes": 23
+      "dishTitle": "Mediterranean Pasta Salad",
+      "description": "My buddy recommended using a random recipe and cooking it for a date night activity and it was such a fun activity for my partner and I to do together :) 5 stars for sure",
+      "likes": 4
     },
     {
       "username": "Josephine B.",
+      "dishTitle": "Hot and Sour Soup",
       "description": "Subbed mushrooms for pork in the hot and sour soup to make it vegetarian...surprised by how good it was",
-      "likes": 3
+      "likes": 12
     },
     {
       "username": "Mohammad M.",
-      "description": "5 WORDS: Roast fennel and aubergine paella. Keep hunting until you get the recipe. Trust me",
-      "likes": 7
+      "dishTitle": "Roast fennel and aubergine paella",
+      "description": "This meal was... chef's kiss!",
+      "likes": 27
     }
   ]
 }
