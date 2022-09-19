@@ -1,0 +1,42 @@
+{
+  "userRating": [
+    {
+      "recipe": "Lasagna",
+      "rating": "4",
+      "id": 1
+    },
+    {
+      "recipe": {},
+      "rating": "4",
+      "id": 2
+    },
+    {
+      "recipe": {},
+      "rating": "3",
+      "id": 3
+    }
+  ],
+
+  "reviews":[
+    {
+      "username": "Cynthia F.",
+      "description": "I made the Honey Garlic Salmon the other night...sooo delicious and was able to use almost only ingredients I already had in my kitchen. Even the kids loved it!",
+      "likes": 10
+    },
+    {
+      "username": "Evan J.",
+      "description": "OMG made the Meditteranean Pasta Salad for a date night activity and it was such a fun activity for my partner and I to do together :) 5 stars for sure",
+      "likes": 23
+    },
+    {
+      "username": "Josephine B.",
+      "description": "Subbed mushrooms for pork in the hot and sour soup to make it vegetarian...surprised by how good it was",
+      "likes": 3
+    },
+    {
+      "username": "Mohammad M.",
+      "description": "5 WORDS: Roast fennel and aubergine paella. Keep hunting until you get the recipe. Trust me",
+      "likes": 7
+    }
+  ]
+}

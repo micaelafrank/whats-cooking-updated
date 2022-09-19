@@ -57,35 +57,7 @@
                                 id="random-meal-instructions">Instructions</span></p>
                     </div>
                 </section>
-
-                <section id="feedback-jump" style="padding-top: 30px;">
-                    <div id="feedback-container">
-                        <p style="padding-top: 30px;"><span class="ingredients1" id="raving-reviews">Customers are
-                                raving about:</span></p>
-                        <div class="side">
-                            <ul id="static-recipes">
-                                <li id="meal-review1">The Honey Garlic Salmon is sooo delicious! Even the kids love it!
-                                </li>
-                                <li id="meal-review2">OMG! We love the Roasted Veggie Kale Salad</li>
-                            </ul>
-                        </div>
-
-                        <form id="recipe-form">
-                            <label for="description" id="formdescription">Share your feedback!</label>
-                            <!-- form description -->
-                            <div class="text-areas">
-                                <textarea id="description" rows="4" cols="80" maxlength="100"></textarea>
-                                <!-- form textarea-->
-                            </div>
-                            <button class="btn btn-dark btn-lg" type="submit">Submit Feedback</button>
-                        </form>
-                        <!-- |||||||||| Newly added comments/ Feedback |||||||||-->
-                        <div>
-                            <ul id="new-recipes">
-                            </ul>
-                        </div>
-                    </div>
-                </section> <br>
+                 <br>
                 <!-- |||||||||| Carousel |||||||||-->
                 <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
@@ -132,6 +104,58 @@
                     </button>
                 </div>
             </div>
+        </section>
+
+        <section id="feedback-jump" style="padding-top: 30px;">
+            <div id="feedback-container">
+                <p style="padding-top: 30px;"><span class="ingredients1" id="raving-reviews">Users are
+                        raving...</span></p>
+                <div class="side">
+                    <ul id="static-recipes">
+                        <li class="userReview" style="font-size: 14px">
+                            <h6>Review by: <span id="reviewedBy1">Name</span></h6>
+                            <span style="margin-bottom: 7px" id="meal-review1">Text</span>
+                            <span style="display:flex; align-items: center; justify-content: center; flex-direction: row;">
+                                <button style="width: 60px; margin: 5px;">LIKE</button>
+                                <i class="fa-sharp fa-solid fa-heart"id="button1" style="margin: 5px; width: 60px"></button>
+                            </span> 
+                        </li>
+                        <li class="userReview" style="font-size: 14px">Review by: <span id="reviewedBy2">Name</span></br>
+                            <span id="meal-review2">Text</span>
+                        </li>
+                        <li class="userReview" style="font-size: 14px">Review by: <span id="reviewedBy3">Name</span></br>
+                            <span id="meal-review3">Text</span>
+                        </li>
+                        <li class="userReview" style="font-size: 14px">Review by: <span id="reviewedBy4">Name</span></br>
+                            <span id="meal-review4">Text</span>
+                        </li>
+                        <!-- <li class="userReview" id="meal-review2">By: <span id="reviewedBy2">Name</span>Second review goes here</li>
+                                        <li class="userReview" id="meal-review3">By: <span id="reviewedBy3">Name</span>third review goes here</li>
+                                        <li class="userReview" id="meal-review4">By: <span id="reviewedBy4">Name</span>fourth review goes here</li> -->
+                    </ul>
+                </div>
+                <p><span class="ingredients1" id="raving-reviews">...Are you?</span></p>
+            </div>
+            <form id="recipe-form">
+                <p style="padding-top: 30px;"><span class="ingredients1" id="raving-reviews">Share Your Feedback</span></p>
+                <!-- form description -->
+                <div class="text-areas">
+                    <label for="nameInput">Name: </label>
+                    <input id="nameInput" type="text" />
+                    <textarea id="description" rows="4" cols="80" maxlength="100"></textarea>
+                    <!-- form textarea-->
+                </div>
+                <button class="btn btn-dark btn-lg" type="submit">Submit Feedback</button>
+            </form>
+            <!-- |||||||||| Newly added comments/ Feedback |||||||||-->
+            <div>
+                <ul id="new-recipes">
+                </ul>
+            </div>
+            </div>
+        </section>
+
+        
     </main>
     <!-- |||||| Footer ||||| -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

@@ -8,13 +8,55 @@ newRecipeBtn.addEventListener('click', () => {
     ulIngredients.innerHTML = " ";
     groceryListContainer.classList.add("hidden");
     // const starContainer = document.querySelector('#star-container');
-    for (item of starSpans) {
+    for (item of starCollection) {
         item.innerHTML = emptyStar;
     }
     fetch("https://www.themealdb.com/api/json/v1/1/random.php")
         .then(response => response.json())
         .then(data => loadRandomMeal(data));
 });
+
+function loadReviewPreview() {
+    fetch('http://localhost:3000/reviews')
+        .then(response => response.json())
+        .then(data => loadTopFeedback(data))
+}
+
+function loadTopFeedback(reviews) {
+    const firstReviewUser = document.querySelector(`#reviewedBy1`);
+    firstReviewUser.textContent = reviews[0].username;
+    const firstReviewText = document.querySelector(`#meal-review1`);
+    firstReviewText.textContent = reviews[0].description;
+    const btn1 = document.querySelector('#button1');
+    btn1.textContent = `${reviews[0].likes}`;
+    
+    const secondReviewUser = document.querySelector(`#reviewedBy2`);
+    secondReviewUser.textContent = reviews[1].username;
+    const secondReviewText = document.querySelector(`#meal-review2`);
+    secondReviewText.textContent = reviews[1].description;
+    
+    const thirdUser = document.querySelector(`#reviewedBy3`);
+    thirdUser.textContent = reviews[2].username;
+    const thirdText = document.querySelector(`#meal-review3`);
+    thirdText.textContent = reviews[2].description;
+
+    const fourthUser = document.querySelector(`#reviewedBy4`);
+    fourthUser.textContent = reviews[3].username;
+    const fourthText = document.querySelector(`#meal-review4`);
+    fourthText.textContent = reviews[3].description;
+
+    // console.log(reviews)
+    // reviews.review.forEach((review) => {
+    //     for (let i = 0; i < 4; i++) {
+    //         const reviewedBy = document.querySelector(`#reviewedBy${i}`);
+    //         reviewedBy.textContent = review[i].username;
+    //         const reviewText = document.querySelector(`#meal-review${i}`);
+    //         reviewText.textContent = review[i].description;
+    //         console.log(`reviewed by: ${reviewedBy}, feedback: ${reviewText}`);
+    //         i++;
+    //     }
+    // }
+}
 
 function loadRandomMeal(data) {
     for (meals of data.meals) {
@@ -42,7 +84,7 @@ function loadRandomMeal(data) {
             }
         });
     }
-
+    loadReviewPreview();
 }
 const groceryListContainer = document.querySelector('#grocery-list-container');
 // const star1 = document.querySelector('#1');
@@ -82,16 +124,17 @@ let starCollection = document.querySelectorAll('.glyph span');
 // for (let star of starCollection) {
 //     star.addEventListener("click", addReview);
 // }
+let recipeTitle = document.querySelector('#random-meal-title')
 
 starCollection.forEach(star => {
     star.addEventListener('click', function () {
         let rating = this.getAttribute("data-rating");
-        return SetRating(rating, starCollection);
+       return setRating(rating, starCollection);
     });
 });
 
 
-function SetRating(rating, starCollection) {
+function setRating(rating, starCollection) {
     let len = starCollection.length;
     console.log(rating);
 
@@ -102,7 +145,24 @@ function SetRating(rating, starCollection) {
             starCollection[i].innerHTML = '☆';
         }
     }
-};
+
+    fetch('http://localhost:3000/userRating',{
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            Accept: "application/json"
+        },
+        body: JSON.stringify({
+            "recipe": recipeTitle,
+            "rating": rating,
+        })
+    })
+        .then(res => res.json())
+        .then(data => {
+            console.log('Success:', data)
+        })
+}
+
 
 let recipeForm = document.getElementById("recipe-form");
 let recipeDescription = document.getElementById("floatingTextarea");
@@ -151,36 +211,6 @@ function addReview(e) {
 }
 
 
-// function addStarStyling(e){
-//     let idNum = e.target.attributes.id.value;
-
-//     if (idNum === 1){
-//         document.getElementById(`1`).style.className = "starChoice";
-//     }
-//     else if (idNum === 2) {
-//         document.getElementById(`1`).style.className = "starChoice";
-//         document.getElementById(`2`).style.className = "starChoice";
-//     }
-//     else if (idNum === 3){
-//         document.getElementById(`3`).style.className = "starChoice";
-//         document.getElementById(`2`).style.className = "starChoice";
-//         document.getElementById(`1`).style.className = "starChoice";
-//     }
-//     else if (idNum === 4) {
-//         document.getElementById(`4`).style.className = "starChoice";
-//         document.getElementById(`3`).style.className = "starChoice";
-//         document.getElementById(`2`).style.className = "starChoice";
-//         document.getElementById(`1`).style.className = "starChoice";
-//     }
-//     else if (idNum === 5) {
-//         document.getElementById(`5`).style.className = "starChoice";
-//         document.getElementById(`4`).style.className = "starChoice";
-//         document.getElementById(`3`).style.className = "starChoice";
-//         document.getElementById(`2`).style.className = "starChoice";
-//         document.getElementById(`1`).style.className = "starChoice";
-//     }
-// }
-
 function resetStars(e) {
     console.log(e.target.innerHTML);
     // e.target.style.color = "white";
@@ -203,4 +233,35 @@ function scrollFunction() {
         document.getElementById("footer-container").style.backgroundImage = "url('images/footer-new.png')";
         document.getElementById("footer-container").style.height = "200px";
     }
+}
+
+
+let buttons = document.querySelectorAll('.likeButton')
+buttons.forEach(btn => {
+    btn.textContent = `${reviews.likes} likes`
+    btn.addEventListener('click', (e) => {
+        console.log(e.target.dataset);
+        likes(e)
+    })
+})
+
+
+function likes(e) {
+    e.preventDefault()
+    let more = parseInt(e.target.previousElementSibling.innerText) + 1
+
+    fetch(`http://localhost:3000/reviews/${e.target.id}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify({
+            "likes": more
+        })
+    })
+        .then(res => res.json())
+        .then((like_obj => {
+            e.target.previousElementSibling.innerText = `${more} likes`;
+        }))
 }
