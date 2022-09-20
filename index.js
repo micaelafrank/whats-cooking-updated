@@ -31,7 +31,7 @@ function loadTopFeedback(reviews) {
     const firstDish = document.querySelector('#dishName');
     firstDish.innerText = reviews[0].dishtitle.toUpperCase();
     const btn1 = document.querySelector('#button1');
-    btn1.textContent = `${reviews[0].likes}`;
+    btn1.textContent = reviews[0].likes;
     
     const secondReviewUser = document.querySelector(`#reviewedBy2`);
     secondReviewUser.textContent = reviews[1].username;
@@ -51,14 +51,14 @@ function loadTopFeedback(reviews) {
     const btn3 = document.querySelector('#button3');
     btn3.textContent = `${reviews[2].likes}`;
 
-    const fourthUser = document.querySelector(`#reviewedBy4`);
-    fourthUser.textContent = reviews[3].username;
-    const fourthText = document.querySelector(`#meal-review4`);
-    fourthText.textContent = reviews[3].description;
-    const dish4 = document.querySelector('#dishName4');
-    dish4.textContent = reviews[3].dishTitle.toUpperCase();
-    const btn4 = document.querySelector('#button4');
-    btn4.textContent = `${reviews[3].likes}`;
+    // const fourthUser = document.querySelector(`#reviewedBy4`);
+    // fourthUser.textContent = reviews[3].username;
+    // const fourthText = document.querySelector(`#meal-review4`);
+    // fourthText.textContent = reviews[3].description;
+    // const dish4 = document.querySelector('#dishName4');
+    // dish4.textContent = reviews[3].dishTitle.toUpperCase();
+    // const btn4 = document.querySelector('#button4');
+    // btn4.textContent = `${reviews[3].likes}`;
 
     // console.log(reviews)
     // reviews.review.forEach((review) => {
@@ -179,39 +179,33 @@ function setRating(rating, starCollection) {
 }
 
 
-let recipeForm = document.getElementById("recipe-form");
-let recipeDescription = document.getElementById("floatingTextarea");
-let newRecipes = document.getElementById("new-recipes");
+// let recipeForm = document.getElementById("recipe-form");
+// let recipeDescription = document.getElementById("floatingTextarea");
+// let newRecipes = document.getElementById("new-recipes");
 
-recipeForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-    let newReview = document.createElement("li");
-    newReview.innerText = description.value
-    newRecipes.append(newReview)
-    e.target.reset()
-    console.log("submit")
+// recipeForm.addEventListener("submit", function (e) {
+//     e.preventDefault();
+//     let newReview = document.createElement("li");
+//     newReview.innerText = description.value
+//     newRecipes.append(newReview)
+//     e.target.reset()
+//     console.log("submit")
     //like button
-    let likeBtn = document.createElement("button");
-    newReview.append(likeBtn)
-    likeBtn.innerText = 0;
-    likeBtn.addEventListener("click", incrementBtn)
-})
-function incrementBtn(e) {
-    let num = parseInt(e.target.innerText)
-    let num2 = num + 1;
-    e.target.innerText = num2;
-}
-let staticLi = document.querySelectorAll(".staticLi")
+//     let likeBtn = document.createElement("button");
+//     newReview.append(likeBtn)
+//     likeBtn.innerText = 0;
+//     likeBtn.addEventListener("click", incrementBtn)
+// })
+// let staticLi = document.querySelectorAll(".staticLi")
 
-document.addEventListener("DOMContentLoaded", function () {
-    for (const item of staticLi) {
-        let likeBtn = document.createElement("button");
-        item.append(likeBtn)
-        likeBtn.innerText = 0;
-        likeBtn.addEventListener("click", incrementBtn)
-    }
-
-})
+// document.addEventListener("DOMContentLoaded", function () {
+//     for (const item of staticLi) {
+//         let likeBtn = document.createElement("button");
+//         item.append(likeBtn)
+//         likeBtn.innerText = 0;
+//         likeBtn.addEventListener("click", incrementBtn)
+//     }
+// })
 
 function addReview(e) {
     console.log(e.target.innerHTML);
@@ -251,21 +245,57 @@ function scrollFunction() {
 }
 
 
-let buttons = document.querySelectorAll('.likeButton')
-buttons.forEach(btn => {
-    btn.textContent = `${reviews.likes} likes`
-    btn.addEventListener('click', (e) => {
+// let buttons = document.querySelectorAll('.likeButton')
+// buttons.forEach(btn => {
+//     btn.textContent = `${reviews.likes} likes`
+//     btn.addEventListener('click', incrementBtn);
+// })
+
+//         console.log(e.target.dataset);
+//         likes(e)
+//     })
+// })
+
+// recipeForm.addEventListener("submit", function (e) {
+//     e.preventDefault();
+//     let newReview = document.createElement("li");
+//     newReview.innerText = description.value
+//     newRecipes.append(newReview)
+//     e.target.reset()
+//     console.log("submit")
+//     //like button
+//     let likeBtn = document.createElement("button");
+//     newReview.append(likeBtn)
+//     likeBtn.innerText = 0;
+//     likeBtn.addEventListener("click", incrementBtn)
+// })
+
+let likeBtnAll = document.querySelectorAll('.like-button-heart')
+for (const likeCounterBtn of likeBtnAll) {
+    likeCounterBtn.setAttribute('class', 'like-button-heart')
+    likeCounterBtn.setAttribute('id', review.id)
+    likeCounterBtn.innerText = "&#2665; LIKES"
+    likeCounterBtn.addEventListener('click', (e) => {
         console.log(e.target.dataset);
         likes(e)
+        incrementBtn(e)
     })
-})
+}
 
 
-function likes(e) {
-    e.preventDefault()
-    let more = parseInt(e.target.previousElementSibling.innerText) + 1
 
-    fetch(`http://localhost:3000/reviews/${e.target.id}`, {
+function incrementBtn(e) {
+//     let num = parseInt(e.target.innerText)
+//     let num2 = num + 1;
+//     e.target.innerText = num2;
+// }
+
+
+// function likes(e) {
+    // e.preventDefault()
+    let more = parseInt(e.target.innerText) + 1
+
+    fetch(`http://localhost:3000/reviews/${id}`, {
         method: "PATCH",
         headers: {
             "Content-Type": "application/json",

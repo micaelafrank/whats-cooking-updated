@@ -2,6 +2,7 @@ body {
     margin: auto;
     background-color: white;
     padding: 5px;
+    height: auto;
 }
 
 html {
@@ -11,12 +12,6 @@ html {
 .jump-link {
     color: white;
     text-decoration: none;
-}
-
-#recipe-form{
-    background-color: white;
-    width: 85%;
-    height: 2em;
 }
 
 .btn {
@@ -101,7 +96,7 @@ ul {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 200px;
+    height: 200px;    
     transition: transform 0.4s;
     background-image: url("images/footer-new.png");
     background-color: #507e8d;
@@ -152,6 +147,17 @@ button {
     background-color: white;
     line-height: 1;
     border: .5px solid black;
+}
+
+.like-button-heart {
+    line-height: 1;
+    border: .5px solid black;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    align-items: center;
+    height: 28px;
+    width: 50px
 }
 
 #newRecipeBtn {
@@ -272,8 +278,8 @@ p.ingredients {
     /* padding: 13px; */
 }
 
-.userReview li{
-    text-align: left;    /* padding: 13px; */
+.reviewsList button{
+    text-align: center;    
 }
 
 .text-areas{
@@ -379,6 +385,8 @@ p.ingredients {
     width: 280px;
     color: white;
     height: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
 .dish-title-review:hover{
@@ -390,9 +398,9 @@ p.ingredients {
     overflow: auto;
 }
 
-body {
+/* body {
     margin-top: 20px;
-}
+} */
 
 .align-center {
     text-align: center;
@@ -475,4 +483,65 @@ img {
 
 .font-cond-b {
     font-weight: 700 !important;
+}
+
+.reviewsContainer{
+    height: auto;
+}
+
+/* this is the form section -- the container for the whole section */
+#formContainer{
+    max-height: 1000px;
+    height: 700px;
+    margin-top: 80px;
+    margin-bottom: 30px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* this is the actual form styling */
+#reviewForm {
+    background-color: white;
+    display: flex;
+    width: 60%;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px 20px;
+    margin-left: 100px;
+    margin-right: 100px;
+    border: 1px solid black;
+    margin-top: 50px;
+}
+
+#reviewForm input {
+    width: 50%;
+    align-items: left;
+    margin-bottom: 20px;
+    height: 40px;
+    margin-left: 30px;
+}
+
+#reviewForm textarea {
+    width: 50%;
+    align-items: left;
+    margin-bottom: 20px;
+    height: 80px;
+    margin-left: 30px;
+}
+
+#reviewForm label {
+    margin-bottom: 10px;
+    text-align: left;
+    align-items: left;
+    float: left;
+    margin-left: 30px;
+}
+
+#reviewForm button {
+    width: 100px;
+    align-items: center;
+    margin-left: 30px;   
+    margin-top: 10px; 
 }
