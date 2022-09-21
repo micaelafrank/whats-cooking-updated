@@ -13,6 +13,30 @@
 </head>
 
 <body>
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <form class="contact-form row">
+                    <div class="form-field col x-50">
+                        <input id="name" class="input-text js-input" type="text" required>
+                        <label class="label" for="name">Name</label>
+                    </div>
+                    <div class="form-field col x-50">
+                        <input id="email" class="input-text js-input" type="email" required>
+                        <label class="label" for="email">E-mail</label>
+                    </div>
+                    <div class="form-field col x-100">
+                        <input id="message" class="input-text js-input" type="text" required>
+                        <label class="label" for="message">Message</label>
+                    </div>
+                    <div class="form-field col x-100 align-center">
+                        <input class="submit-btn" type="submit" value="Submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <div id="footer-container" class="footer-design">
         <ul id="footer-list">
             <li class="footer-item"><a class="jump-link" href="#recipes">Recipes</a></li>
@@ -115,22 +139,9 @@
                 </li>
             </ul>
         </div>
-        </section>
-        <div id="formContainer">
-            <form id="reviewForm">
-                <h2 style="text-align: center;">Share Feedback</h2>
-                <h5 style="text-align: center; padding-bottom: 30px;">Tell us about a recipe that was <i>*chef's kiss*</i></h5>
-                <label for="name">Name: </label>
-                <input type="text" name="name" id="new-name" placeholder="Jane Doe" />
-                <label for="dish">Dish: </label>
-                <input type="text" name="dish" id="new-dish" placeholder="General Tso's Chicken" />
-                <label for="image">Profile Image:</label>
-                <input type="text" name="image" id="new-image" placeholder="Enter image URL" />
-                <label for="image">Share Feedback: </label>
-                <textarea type="text" name="review" id="new-review" placeholder="500 character or less"></textarea>
-                <button type="submit">Add review</button>
-            </form>
-        </div>
+    </section>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">LEAVE A
+        REVIEW</button>
                 <!-- <li>
                     <span style="display:flex; justify-content: right; flex-direction: row;">
                         <button class="like-button"
