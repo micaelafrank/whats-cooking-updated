@@ -16,40 +16,39 @@ newRecipeBtn.addEventListener('click', () => {
         .then(data => loadRandomMeal(data));
 });
 
-function loadReviewPreview() {
-    fetch('http://localhost:3000/reviews')
-        .then(response => response.json())
-        .then(data => loadTopFeedback(data))
+function loadTopFeedback(reviews) {
+    const selectedReviews = reviews.sort(() => Math.random() - Math.random()).slice(0, 4)
+    console.log(reviews)
+    for (let i=1; i<=selectedReviews.length; i++) {
+        console.log(selectedReviews)
+        const reviewer = document.querySelector(`#reviewedBy${i}`);
+        reviewer.textContent = selectedReviews[i].reviewedBy;
+        const reviewText = document.querySelector(`#mealReview${i}`);
+        reviewText.textContent = selectedReviews[i].description;
+        const dishReviewed = document.querySelector(`#dishName${i}`);
+        dishReviewed.textContent = selectedReviews[i].dishtitle;
+        const reviewLikes = document.querySelector(`#button${i}`);
+        reviewLikes.textContent = selectedReviews[i].likes;
+    }
 }
 
-function loadTopFeedback(reviews) {
-    console.log(reviews)
-    const firstReviewUser = document.querySelector(`#reviewedBy1`);
-    firstReviewUser.textContent = reviews[0].username;
-    const firstReviewText = document.querySelector(`#meal-review1`);
-    firstReviewText.textContent = reviews[0].description;
-    const firstDish = document.querySelector('#dishName');
-    firstDish.innerText = reviews[0].dishtitle.toUpperCase();
-    const btn1 = document.querySelector('#button1');
-    btn1.textContent = reviews[0].likes;
-    
-    const secondReviewUser = document.querySelector(`#reviewedBy2`);
-    secondReviewUser.textContent = reviews[1].username;
-    const secondReviewText = document.querySelector(`#meal-review2`);
-    secondReviewText.textContent = reviews[1].description;
-    const dish2 = document.querySelector('#dishName2');
-    dish2.textContent = reviews[1].dishTitle.toUpperCase();
-    const btn2 = document.querySelector('#button2');
-    btn2.textContent = `${reviews[1].likes}`;
+    // const secondReviewUser = document.querySelector(`#reviewedBy2`);
+    // secondReviewUser.textContent = reviews[1].username;
+    // const secondReviewText = document.querySelector(`#meal-review2`);
+    // secondReviewText.textContent = reviews[1].description;
+    // const dish2 = document.querySelector('#dishName2');
+    // dish2.textContent = reviews[1].dishTitle.toUpperCase();
+    // const btn2 = document.querySelector('#button2');
+    // btn2.textContent = `${reviews[1].likes}`;
 
-    const thirdUser = document.querySelector(`#reviewedBy3`);
-    thirdUser.textContent = reviews[2].username;
-    const thirdText = document.querySelector(`#meal-review3`);
-    thirdText.textContent = reviews[2].description;
-    const dish3 = document.querySelector('#dishName3');
-    dish3.textContent = reviews[2].dishTitle.toUpperCase();
-    const btn3 = document.querySelector('#button3');
-    btn3.textContent = `${reviews[2].likes}`;
+    // const thirdUser = document.querySelector(`#reviewedBy3`);
+    // thirdUser.textContent = reviews[2].username;
+    // const thirdText = document.querySelector(`#meal-review3`);
+    // thirdText.textContent = reviews[2].description;
+    // const dish3 = document.querySelector('#dishName3');
+    // dish3.textContent = reviews[2].dishTitle.toUpperCase();
+    // const btn3 = document.querySelector('#button3');
+    // btn3.textContent = `${reviews[2].likes}`;
 
     // const fourthUser = document.querySelector(`#reviewedBy4`);
     // fourthUser.textContent = reviews[3].username;
@@ -60,18 +59,6 @@ function loadTopFeedback(reviews) {
     // const btn4 = document.querySelector('#button4');
     // btn4.textContent = `${reviews[3].likes}`;
 
-    // console.log(reviews)
-    // reviews.review.forEach((review) => {
-    //     for (let i = 0; i < 4; i++) {
-    //         const reviewedBy = document.querySelector(`#reviewedBy${i}`);
-    //         reviewedBy.textContent = review[i].username;
-    //         const reviewText = document.querySelector(`#meal-review${i}`);
-    //         reviewText.textContent = review[i].description;
-    //         console.log(`reviewed by: ${reviewedBy}, feedback: ${reviewText}`);
-    //         i++;
-    //     }
-    // }
-}
 
 function loadRandomMeal(data) {
     for (meals of data.meals) {
@@ -101,6 +88,21 @@ function loadRandomMeal(data) {
     }
     loadReviewPreview();
 }
+
+function loadReviewPreview() {
+    fetch('http://localhost:3000/reviews',{
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            Accept: "application/json",
+            crossOrigin: "Anonymous"        
+        },
+    })
+    .then(response => response.json())
+    .then(reviews => loadTopFeedback(reviews))
+}
+
+
 const groceryListContainer = document.querySelector('#grocery-list-container');
 // const star1 = document.querySelector('#1');
 // const star2 = document.querySelector('#2');
@@ -270,21 +272,21 @@ function scrollFunction() {
 //     likeBtn.addEventListener("click", incrementBtn)
 // })
 
-let likeBtnAll = document.querySelectorAll('.like-button-heart')
-for (const likeCounterBtn of likeBtnAll) {
-    likeCounterBtn.setAttribute('class', 'like-button-heart')
-    likeCounterBtn.setAttribute('id', review.id)
-    likeCounterBtn.innerText = "&#2665; LIKES"
-    likeCounterBtn.addEventListener('click', (e) => {
-        console.log(e.target.dataset);
-        likes(e)
-        incrementBtn(e)
-    })
-}
+// let likeBtnAll = document.querySelectorAll('.like-button-heart')
+// for (const likeCounterBtn of likeBtnAll) {
+//     likeCounterBtn.setAttribute('class', 'like-button-heart')
+//     likeCounterBtn.setAttribute('id', review.id)
+//     likeCounterBtn.innerText = "&#2665; LIKES"
+//     likeCounterBtn.addEventListener('click', (e) => {
+//         console.log(e.target.dataset);
+//         likes(e)
+//         incrementBtn(e)
+//     })
+// }
 
 
 
-function incrementBtn(e) {
+// function incrementBtn(e) {
 //     let num = parseInt(e.target.innerText)
 //     let num2 = num + 1;
 //     e.target.innerText = num2;
@@ -293,20 +295,20 @@ function incrementBtn(e) {
 
 // function likes(e) {
     // e.preventDefault()
-    let more = parseInt(e.target.innerText) + 1
+    // let more = parseInt(e.target.innerText) + 1
 
-    fetch(`http://localhost:3000/reviews/${id}`, {
-        method: "PATCH",
-        headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json"
-        },
-        body: JSON.stringify({
-            "likes": more
-        })
-    })
-        .then(res => res.json())
-        .then((like_obj => {
-            e.target.previousElementSibling.innerText = `${more} likes`;
-        }))
-}
+    // fetch(`http://localhost:3000/reviews/${id}`, {
+    //     method: "PATCH",
+    //     headers: {
+    //         "Content-Type": "application/json",
+    //         "Accept": "application/json"
+    //     },
+    //     body: JSON.stringify({
+    //         "likes": more
+    //     })
+    // })
+    //     .then(res => res.json())
+    //     .then((like_obj => {
+    //         e.target.previousElementSibling.innerText = `${more} likes`;
+    //     }))
+// }

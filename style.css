@@ -382,9 +382,10 @@ p.ingredients {
 
 .dish-title-review{
     background-color: #507e8d;
-    width: 280px;
     color: white;
     height: 20px;
+    font-size: 13px;
+    line-height: .9;
     align-items: center;
     justify-content: center;
 }
@@ -442,7 +443,7 @@ img {
 
 .mgb-20,
 .mgb-20-all>* {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .wpx-100,
@@ -492,7 +493,6 @@ img {
 /* this is the form section -- the container for the whole section */
 #formContainer{
     max-height: 1000px;
-    height: 700px;
     margin-top: 80px;
     margin-bottom: 30px;
     align-items: center;
@@ -506,11 +506,11 @@ img {
     background-color: white;
     display: flex;
     width: 60%;
+    height: auto;
+    
     justify-content: center;
     flex-direction: column;
     padding: 40px 20px;
-    margin-left: 100px;
-    margin-right: 100px;
     border: 1px solid black;
     margin-top: 50px;
 }
@@ -545,3 +545,22 @@ img {
     margin-left: 30px;   
     margin-top: 10px; 
 }
+
+#revList1 p{
+    line-height: 1.3;
+    font-size: 13px;
+}
+
+#revList2 p {
+    line-height: 1.3;
+    font-size: 13px;
+}
+
+#revList3 p {
+    line-height: 1.3;
+    font-size: 13px;
+}
+
+/* .review-top{
+    line-height: .8;
+} */

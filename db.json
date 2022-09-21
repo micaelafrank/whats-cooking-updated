@@ -48,32 +48,53 @@
   ],
   "reviews": [
     {
-      "username": "Cynthia F.",
+      "reviewedBy": "Cynthia F.",
       "dishtitle": "Honey Garlic Salmon",
-      "description": "I made the honey garlic salmon last night...it was unreal! Quick to make and I was able to use almost only ingredients I already had in my kitchen. Even the kids loved it!",
-      "likes": 10,
+      "description": "I made this last night...it was unreal! Quick to make and I was able to use almost only ingredients I already had in my kitchen. Even the kids loved it!",
+      "likes": 16,
       "id": 1
     },
     {
-      "username": "Evan J.",
-      "dishTitle": "Mediterranean Pasta Salad",
-      "description": "My buddy recommended using a random recipe and cooking it for a date night activity and it was such a fun activity for my partner and I to do together :) 5 stars for sure",
+      "reviewedBy": "Evan J.",
+      "dishtitle": "Mediterranean Pasta Salad",
+      "description": "Made this for a date night activity and it was a fun time, but this recipe was disgusting tbh",
       "likes": 4,
       "id": 2
     },
     {
-      "username": "Josephine B.",
-      "dishTitle": "Hot and Sour Soup",
+      "reviewedBy": "Josephine B.",
+      "dishtitle": "Hot and Sour Soup",
       "description": "Subbed mushrooms for pork in the hot and sour soup to make it vegetarian...surprised by how good it was",
       "likes": 7,
       "id": 3
     },
     {
-      "username": "Mohammad M.",
-      "dishTitle": "Roast fennel and aubergine paella",
+      "reviewedBy": "Mohammad M.",
+      "dishtitle": "Roast fennel and aubergine paella",
       "description": "This meal was... chef's kiss!",
-      "likes": 27,
+      "likes": 37,
       "id": 4
+    },
+    {
+      "reviewedBy": "Arabella N.",
+      "dishtitle": "Battenberg Cake",
+      "description": "I used to bake this cake with my grandmother growing up - so fun to pass these memories and recipes down to my children",
+      "likes": 6,
+      "id": 5
+    },
+    {
+      "reviewedBy": "Joshua K.",
+      "dishtitle": "Beef stroganoff",
+      "description": "2 words: beef stroganoff. If you're lucky this recipe will will show up for you!",
+      "likes": 1,
+      "id": 6
+    },
+    {
+      "reviewedBy": "Ben F.",
+      "dishtitle": "Chicken enchilada casserole",
+      "description": "A meal that's ready in 30 mins? Yes please!!",
+      "likes": 42,
+      "id": 7
     }
   ]
 }
