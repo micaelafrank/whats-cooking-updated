@@ -48,28 +48,28 @@
   ],
   "reviews": [
     {
-      "reviewedBy": "Cynthia F.",
+      "reviewedBy": "Shawn F.",
       "dishtitle": "Honey Garlic Salmon",
       "description": "I made this last night...it was unreal! Quick to make and I was able to use almost only ingredients I already had in my kitchen. Even the kids loved it!",
       "likes": 16,
       "id": 1
     },
     {
-      "reviewedBy": "Evan J.",
+      "reviewedBy": "Cory J.",
       "dishtitle": "Mediterranean Pasta Salad",
       "description": "Made this for a date night activity and it was a fun time, but this recipe was disgusting tbh",
       "likes": 4,
       "id": 2
     },
     {
-      "reviewedBy": "Josephine B.",
+      "reviewedBy": "Charlie B.",
       "dishtitle": "Hot and Sour Soup",
       "description": "Subbed mushrooms for pork in the hot and sour soup to make it vegetarian...surprised by how good it was",
       "likes": 7,
       "id": 3
     },
     {
-      "reviewedBy": "Mohammad M.",
+      "reviewedBy": "Sam M.",
       "dishtitle": "Roast fennel and aubergine paella",
       "description": "This meal was... chef's kiss!",
       "likes": 37,
@@ -83,14 +83,14 @@
       "id": 5
     },
     {
-      "reviewedBy": "Joshua K.",
+      "reviewedBy": "Harley K.",
       "dishtitle": "Beef stroganoff",
       "description": "2 words: beef stroganoff. If you're lucky this recipe will will show up for you!",
       "likes": 1,
       "id": 6
     },
     {
-      "reviewedBy": "Ben F.",
+      "reviewedBy": "Benji F.",
       "dishtitle": "Chicken enchilada casserole",
       "description": "A meal that's ready in 30 mins? Yes please!!",
       "likes": 42,
