@@ -139,24 +139,24 @@
                 </li>
             </ul>
             <div id="formContainer" style="border-right: none;">
-                <form class="contact-form row" style="display: flex; flex-direction: column;">
+                <form id="reviewForm" class="contact-form row" style="display: flex; flex-direction: column;">
                     <h5 style="padding-bottom: 10px;">LEAVE A RECIPE REVIEW</h5>
                     <div style="display: flex; flex-direction: row; align-items: center; text-align: center; margin-bottom: 10px;">
                         <label style="font-size: 14px; text-align: left; width: 20%; margin-right: 10px;" class="label"
                             for="name">Name:</label>
-                        <input placeholder="Jane D." id="name" style="padding-left: 5px; font-size: 14px; " class="input-text js-input"
+                        <input placeholder="Jane D." id="formName" style="padding-left: 5px; font-size: 14px; " class="input-text js-input"
                             type="text" required>
                     </div>
                     <div style="display: flex; flex-direction: row; align-items: center; text-align: center; margin-bottom: 10px;">
                         <label style="font-size: 14px; text-align: left; width: 20%; margin-right: 10px;" class="label"
                             for="email">Dish:</label>
-                        <input style="padding-left: 5px; font-size: 14px;" placeholder="Kung Pao Chicken" id="email"
+                        <input style="padding-left: 5px; font-size: 14px;" placeholder="Kung Pao Chicken" id="formEmail"
                             class="input-text js-input" type="email" required>
                     </div>
                     <div style="display: flex; flex-direction: row; text-align: center; margin-bottom: 10px;">
                         <label style="font-size: 14px; text-align: left; width: 20%; margin-right: 10px;" class="label"
                             for="message">Message:</label>
-                        <textarea id="message" placeholder="500 characters or less."
+                        <textarea id="formMessage" placeholder="500 characters or less."
                             style="padding-left: 5px; font-size: 14px; height: 90px;" class="input-text js-input" type="text"
                             required></textarea>
                     </div>

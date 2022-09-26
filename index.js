@@ -181,12 +181,13 @@ function setRating(rating, starCollection) {
 }
 
 
-// let recipeForm = document.getElementById("recipe-form");
-// let recipeDescription = document.getElementById("floatingTextarea");
-// let newRecipes = document.getElementById("new-recipes");
+let reviewForm = document.getElementById("reviewForm");
+let formName = document.getElementById("formName");
+let formEmail = document.getElementById("formEmail");
+let formMessage = document.getElementById("formMessage");
 
-// recipeForm.addEventListener("submit", function (e) {
-//     e.preventDefault();
+reviewForm.addEventListener("submit", function (e) {
+    e.preventDefault();
 //     let newReview = document.createElement("li");
 //     newReview.innerText = description.value
 //     newRecipes.append(newReview)
@@ -197,7 +198,7 @@ function setRating(rating, starCollection) {
 //     newReview.append(likeBtn)
 //     likeBtn.innerText = 0;
 //     likeBtn.addEventListener("click", incrementBtn)
-// })
+})
 // let staticLi = document.querySelectorAll(".staticLi")
 
 // document.addEventListener("DOMContentLoaded", function () {
