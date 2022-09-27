@@ -1,50 +1,30 @@
-<section class="get-in-touch">
-   <h1 class="title">LEAVE A REVIEW</h1>
-   <form class="contact-form row">
-      <div class="form-field col x-50">
-         <input id="name" class="input-text js-input" type="text" required>
-         <label class="label" for="name">Name</label>
-      </div>
-      <div class="form-field col x-50">
-         <input id="email" class="input-text js-input" type="email" required>
-         <label class="label" for="email">E-mail</label>
-      </div>
-      <div class="form-field col x-100">
-         <input id="message" class="input-text js-input" type="text" required>
-         <label class="label" for="message">Message</label>
-      </div>
-      <div class="form-field col x-100 align-center">
-         <input class="submit-btn" type="submit" value="Submit">
-      </div>
-   </form>
-</section>
+<ul class="hash-list cols-3 cols-1-xs pad-30-all align-center text-sm">
+    <li>
+        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="wpx-100 img-round mgb-20" title="" alt=""
+            data-edit="false" data-editor="field"
+            data-field="src[Image Path]; title[Image Title]; alt[Image Alternate Text]">
+        <p class="fs-110 font-cond-l" contenteditable="false">" Sed ut perspiciatis unde omnis iste natus error sit
+            voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae. "</p>
+        <h5 class="font-cond mgb-5 fg-text-d fs-130" contenteditable="false">Martha Stewart</h5>
+        <small class="font-cond case-u lts-sm fs-80 fg-text-l" contenteditable="false">Business Woman - New York</small>
+    </li>
+</ul>
 
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">LEAVE A REVIEW</button>
-
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <form class="contact-form row">
-                <div class="form-field col x-50">
-                    <input id="name" class="input-text js-input" type="text" required>
-                    <label class="label" for="name">Name</label>
-                </div>
-                <div class="form-field col x-50">
-                    <input id="email" class="input-text js-input" type="email" required>
-                    <label class="label" for="email">E-mail</label>
-                </div>
-                <div class="form-field col x-100">
-                    <input id="message" class="input-text js-input" type="text" required>
-                    <label class="label" for="message">Message</label>
-                </div>
-                <div class="form-field col x-100 align-center">
-                    <input class="submit-btn" type="submit" value="Submit">
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-$('#myModal').modal(options)
+<ul id="review-ul" class="hash-list cols-3 cols-1-xs pad-30-all align-center text-sm">
+    <li id="revList1">
+        <span class="review-top" style="display:flex; justify-content: right; flex-direction: row;">
+            <!-- <button class="like-button" style="width: 50px; height: 28px; margin-right: 5px; text-align: center; justify-content: center; align-items: center;">LIKE</button> -->
+            <button class="like-button-heart"><svg style="width: 16px; margin-right: 5px; margin-left: 5px;"
+                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path
+                        d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z" />
+                </svg><span id="button1"></span></button>
+        </span>
+        <img id="profile1" src="images/cynthia.png" class="wpx-100 img-round mgb-20" />
+        <p style="font-weight: bold; align-items: center; line-height: .9; font-size: 13px;"
+            class="font-cond mgb-5 fg-text-d fs-130" contenteditable="false" id="reviewedBy1">Name</p>
+        <p class="dish-title-review" style="text-align: center; align-items: center; font-size: 14px; line-height: .9;"
+            id="dishName1">Dish</span></p>
+        <p style="font-size: 12px" class="fs-110 font-cond-l" contenteditable="false" id="mealReview1"></p>
+    </li>

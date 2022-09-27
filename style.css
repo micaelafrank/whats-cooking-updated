@@ -107,7 +107,7 @@ ul {
 .reviewsAndForm{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     width: 100%;
 }
@@ -119,6 +119,12 @@ ul {
 }
 
 #formContainer{
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form{
     align-items: center;
 }
 
@@ -509,8 +515,6 @@ img {
     max-height: 302px;
     /* align-items: center; */
 }
-
-
 
 
 /* this is the form section -- the container for the whole section */

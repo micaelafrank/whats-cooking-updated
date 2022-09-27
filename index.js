@@ -273,17 +273,14 @@ function scrollFunction() {
 //     likeBtn.addEventListener("click", incrementBtn)
 // })
 
-// let likeBtnAll = document.querySelectorAll('.like-button-heart')
-// for (const likeCounterBtn of likeBtnAll) {
-//     likeCounterBtn.setAttribute('class', 'like-button-heart')
-//     likeCounterBtn.setAttribute('id', review.id)
-//     likeCounterBtn.innerText = "&#2665; LIKES"
-//     likeCounterBtn.addEventListener('click', (e) => {
-//         console.log(e.target.dataset);
-//         likes(e)
-//         incrementBtn(e)
-//     })
-// }
+let likeBtnAll = document.querySelectorAll('.like-button-heart')
+for (const likeCounterBtn of likeBtnAll) {
+    likeCounterBtn.addEventListener('click', (e) => {
+        console.log(e.target.value);
+        // let count = parseInt(e.target.innerText) + 1;
+        incrementBtn(e)
+    })
+}
 
 
 
@@ -294,22 +291,25 @@ function scrollFunction() {
 // }
 
 
-// function likes(e) {
-    // e.preventDefault()
-    // let more = parseInt(e.target.innerText) + 1
+function incrementBtn(e) {
+    count += 1;
+    button.innerHTML = "Click me: " + count;
 
-    // fetch(`http://localhost:3000/reviews/${id}`, {
-    //     method: "PATCH",
-    //     headers: {
-    //         "Content-Type": "application/json",
-    //         "Accept": "application/json"
-    //     },
-    //     body: JSON.stringify({
-    //         "likes": more
-    //     })
-    // })
-    //     .then(res => res.json())
-    //     .then((like_obj => {
-    //         e.target.previousElementSibling.innerText = `${more} likes`;
-    //     }))
-// }
+    let count = parseInt(e.target.innerText) + 1;
+    console.log(more);
+
+    fetch(`http://localhost:3000/reviews/${id}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify({
+            "likes": more
+        })
+    })
+        .then(res => res.json())
+        .then((like_obj => {
+            e.target.innerText = more;
+        }))
+}
