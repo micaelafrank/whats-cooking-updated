@@ -80,10 +80,10 @@
                                 id="random-meal-instructions">Instructions</span></p>
                     </div>
                 </section>
-            </section>
-        </div>   
-    </div> 
-    <section class="reviewsAndForm">
+            </div>
+        </div>
+    </section>
+    <section id="feedback-jump" class="reviewsAndForm">
             <!-- <div class="reviewsContainer"> -->
                 <ul id="review-ul" class="hash-list cols-3 cols-1-xs pad-30-all align-center text-sm">
                     <li id="revList1">
@@ -94,14 +94,14 @@
                                 viewBox="0 0 512 512">
                                 <path
                                     d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z" />
-                            </svg><span id="button1"></span></button>
+                            </svg><span id="button1">12</span></button>
                         </span>
-                    <img id="profile1" src="images/cynthia.png"
+                    <img id="profile1" src="images/evan.png"
                     class="wpx-100 img-round mgb-20"/>
                     <p style="font-weight: bold; align-items: center; line-height: .9; font-size: 13px;" class="font-cond mgb-5 fg-text-d fs-130" contenteditable="false"
-                    id="reviewedBy1">Name</p>
-                    <p class="dish-title-review" style="text-align: center; align-items: center; font-size: 14px; line-height: .9;" id="dishName1">Dish</span></p>
-                    <p style="font-size: 12px" class="fs-110 font-cond-l" contenteditable="false" id="mealReview1"></p>
+                    id="reviewedBy1">Evan G.</p>
+                    <p class="dish-title-review" style="text-align: center; align-items: center; font-size: 14px; line-height: .9;" id="dishName1">Hot and Sour Soup</span></p>
+                    <p style="font-size: 12px" class="fs-110 font-cond-l" contenteditable="false" id="mealReview1">Subbed mushrooms for pork in the hot and sour soup to make it vegetarian...it was soooo good</p>
                 </li>
                 <li id="revList2">
                     <span class="review-top" style="display:flex; justify-content: right; flex-direction: row;">
@@ -113,15 +113,15 @@
                                 viewBox="0 0 512 512">
                                 <path
                                     d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z" />
-                            </svg><span id="button2"></span></button>
+                            </svg><span id="button2">29</span></button>
                     </span>
-                    <img id="profile2" src="images/evan.png" class="wpx-100 img-round mgb-20" />
+                    <img id="profile2" src="images/josephine.png" class="wpx-100 img-round mgb-20" />
                     <p style="font-weight: bold; line-height: .9; font-size: 13px;" class="font-cond mgb-5 fg-text-d fs-130"
-                        contenteditable="false" id="reviewedBy2">Name</br>
-                    <p class="dish-title-review" style="font-size: 14px; line-height: .9;" id="dishName2">Dish</span></p>
-                    <p style="font-size: 12px" class="fs-110 font-cond-l" contenteditable="false" id="mealReview2"></p>
+                        contenteditable="false" id="reviewedBy2">Josephine F.</br>
+                    <p class="dish-title-review" style="font-size: 14px; line-height: .9;" id="dishName2">Roast fennel and aubergine paella</span></p>
+                    <p style="font-size: 12px" class="fs-110 font-cond-l" contenteditable="false" id="mealReview2">This meal was... chef's kiss!</p>
                 </li>
-                <li id="revList3">
+                <li id="revList3" class="hidden">
                     <span class="review-top" style="display:flex; justify-content: right; flex-direction: row;">
                         <!-- <button class="like-button"
                             style="width: 50px; height: 28px; margin-right: 5px; text-align: center; justify-content: center; align-items: center;">LIKE</button> -->
@@ -131,19 +131,19 @@
                                 viewBox="0 0 512 512">
                                 <path
                                     d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z" />
-                            </svg><span id="button3"></span></button>
+                            </svg><span id="button3">9</span></button>
                     </span>
-                    <img id="profile3" src="images/josephine.png" class="wpx-100 img-round mgb-20" />
+                    <img id="profile3" src="images/cynthia.png" class="wpx-100 img-round mgb-20" />
                     <p style="font-weight: bold; line-height: .9; font-size: 14px;" class="font-cond mgb-5 fg-text-d fs-130"
-                        contenteditable="false" id="reviewedBy3">Name</br>
-                    <p class="dish-title-review" style="font-size: 13px; line-height: .9;" id="dishName3">Dish</span></p>
-                    <p style="font-size: 12px" style="margin-bottom: 60px" class="fs-110 font-cond-l" contenteditable="false" id="mealReview3"></p>
+                        contenteditable="false" id="reviewedBy3">Arabella S.</br>
+                    <p class="dish-title-review" style="font-size: 13px; line-height: .9;" id="dishName3">Battenberg Cake</span></p>
+                    <p style="font-size: 12px" style="margin-bottom: 60px" class="fs-110 font-cond-l" contenteditable="false" id="mealReview3">I used to bake this cake with my grandmother growing up - so fun to pass these memories and recipes down to my children.</p>
                 </li>
             </ul>
             </section>
             </div>
-            <div id="formContainer" style="border-right: none;">
-                <form id="reviewForm" class="contact-form row" style="display: flex; flex-direction: column;">
+            <div id="formContainer" style="border-right: none; align-items: center; justify-content: center; margin-left: auto; margin-right: auto;">
+                <form id="reviewForm" class="contact-form row" style="align-items: center; justify-content: center; margin-left: auto; margin-right: auto; display: flex; flex-direction: column;">
                     <h5 style="padding-bottom: 10px;">LEAVE A RECIPE REVIEW</h5>
                     <div style="display: flex; flex-direction: row; align-items: center; text-align: center; margin-bottom: 10px;">
                         <label style="font-size: 14px; text-align: left; width: 20%; margin-right: 10px;" class="label"
@@ -155,7 +155,7 @@
                         <label style="font-size: 14px; text-align: left; width: 20%; margin-right: 10px;" class="label"
                             for="email">Dish:</label>
                         <input style="padding-left: 5px; font-size: 14px;" placeholder="Kung Pao Chicken" id="formEmail"
-                            class="input-text js-input" type="email" required>
+                            class="input-text js-input" type="text" required>
                     </div>
                     <div style="display: flex; flex-direction: row; text-align: center; margin-bottom: 10px;">
                         <label style="font-size: 14px; text-align: left; width: 20%; margin-right: 10px;" class="label"

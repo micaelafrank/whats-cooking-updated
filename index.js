@@ -17,7 +17,7 @@ newRecipeBtn.addEventListener('click', () => {
 });
 
 function loadTopFeedback(reviews) {
-    const selectedReviews = reviews.sort(() => Math.random() - Math.random()).slice(0, 4)
+    const selectedReviews = reviews.sort(() => Math.random() - Math.random()).slice(0, 3)
     console.log(reviews)
     for (let i=1; i<=selectedReviews.length; i++) {
         console.log(selectedReviews)
@@ -177,7 +177,7 @@ function setRating(rating, starCollection) {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            Accept: "application/json"
+            "Accept": "application/json"
         },
         body: JSON.stringify({
             "recipe": recipeTitle,
@@ -198,11 +198,34 @@ let formMessage = document.getElementById("formMessage");
 
 reviewForm.addEventListener("submit", function (e) {
     e.preventDefault();
-//     let newReview = document.createElement("li");
-//     newReview.innerText = description.value
-//     newRecipes.append(newReview)
-//     e.target.reset()
-//     console.log("submit")
+    let formData = {
+        "reviewedBy": formName,
+        "dishtitle": formEmail,
+        "description": formMessage
+    }
+    fetch('http://localhost:3000/reviews', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            "Accept": "application/json"
+        },
+        body: JSON.stringify(formData)
+    })
+        .then(res => res.json())
+        .then(data => {
+            console.log('Success:', data)
+        })
+
+    let newReview = document.getElementById("revList3");
+    let reviewName = document.getElementById("reviewedBy3");
+    reviewName.innerText = formName.value;
+    let reviewDish = document.getElementById("dishName3");
+    reviewDish.innerText = formEmail.value;
+    let reviewComment = document.getElementById("mealReview3");
+    reviewComment.innerText = formMessage.value;
+    newReview.classList.remove("hidden");
+    e.target.reset()
+    console.log("submit")
     //like button
 //     let likeBtn = document.createElement("button");
 //     newReview.append(likeBtn)
