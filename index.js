@@ -86,7 +86,6 @@ function loadRandomMeal(data) {
             }
         });
     }
-    loadReviewPreview();
 }
 
 function loadReviewPreview() {
@@ -123,7 +122,18 @@ function addToGroceryList(e) {
     li.appendChild(closeBtn);
     document.querySelector('#grocery-list-items').appendChild(li);
     groceryListContainer.classList.remove("hidden");
+    // fetch("http://localhost:3000/groceryList", {
+    //     method: "POST",
+    //     headers: {
+    //         "Content-Type": "application/json",
+    //         "Accept": "application/json",
+    //     },
+    //     body: JSON.stringify(myItem),
+    // })
+    //     .then(res => res.json())
+    //     .then(data => console.log(data))
     closeBtn.addEventListener('click', removeItem);
+    loadReviewPreview();
 };
 
 function removeItem(e) {
